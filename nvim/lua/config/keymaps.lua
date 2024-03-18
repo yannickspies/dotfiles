@@ -12,25 +12,25 @@ local opts = { noremap = true, silent = true }
 keymap.set("n", "<leader>a", mark.add_file)
 keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 
-keymap.set("n", "<C-1>", function()
+keymap.set("n", "<C-h>", function()
   ui.nav_file(1)
 end)
-keymap.set("n", "<C-2>", function()
+keymap.set("n", "<C-j>", function()
   ui.nav_file(2)
 end)
-keymap.set("n", "<C-3>", function()
+keymap.set("n", "<C-k>", function()
   ui.nav_file(3)
 end)
-keymap.set("n", "<C-4>", function()
+keymap.set("n", "<C-l>", function()
   ui.nav_file(4)
 end)
 
--- Increment/decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
-
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
+
+-- Increment/decrement
+-- keymap.set("n", "+", "<C-a>")
+-- keymap.set("n", "-", "<C-x>")
 
 -- Disable continuations
 keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
