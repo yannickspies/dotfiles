@@ -1,10 +1,9 @@
 return {
-  { "Mofiqul/dracula.nvim" },
   {
-    "LazyVim/LazyVim",
-    opts = {
-      transparent = true,
-      colorscheme = "dracula",
-    },
+    "Mofiqul/dracula.nvim",
+    priority = 1000,
+    -- opts = function()
+    --   return { transparent_bg = true }
+    -- end,
   },
 }
