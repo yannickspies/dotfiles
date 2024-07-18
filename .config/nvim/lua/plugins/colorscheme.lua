@@ -1,9 +1,6 @@
 return {
-  "navarasu/onedark.nvim",
-  config = function()
-    require("onedark").setup({
-      style = "darker",
-    })
-    require("onedark").load()
-  end,
+  "binhtran432k/dracula.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
 }

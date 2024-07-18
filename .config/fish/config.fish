@@ -1,5 +1,3 @@
-fish_config theme choose "Dracula Official"
-
 set fish_greeting ""
 
 set -gx EDITOR nvim
