@@ -1,13 +1,10 @@
 return {
-  -- add dracula
-  { "Mofiqul/dracula.nvim" },
-
-  -- Configure LazyVim to load dracula
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      transparent_bg = true,
-      colorscheme = "dracula",
-    },
-  },
+  "navarasu/onedark.nvim",
+  config = function()
+    require("onedark").setup({
+      style = "deep",
+      transparent = true,
+    })
+    require("onedark").load()
+  end,
 }
