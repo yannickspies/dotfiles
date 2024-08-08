@@ -9,7 +9,22 @@
 ========         ||                    ||   | === |          ========
 ========         ||   KICKSTART.NVIM   ||   |-----|          ========
 ========         ||                    ||   | === |          ========
-========         ||                    ||   |-----|          ========
+========         ||                    ||   |-----|          =====-- lazy.nvim
+{
+  "folke/noice.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- add any options here
+  },
+  dependencies = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+    }
+}===
 ========         ||:Tutor              ||   |:::::|          ========
 ========         |'-..................-'|   |____o|          ========
 ========         `"")----------------(""`   ___________      ========
@@ -203,6 +218,9 @@ vim.keymap.set('n', '<Leader>O', 'O<Esc>^Da', opts)
 -- Save file
 vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>a', opts)
+
+-- IncRename
+vim.keymap.set('n', '<leader>rn', ':IncRename ')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -711,12 +729,12 @@ require('lazy').setup({
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
         },
       },
       'saadparwaiz1/cmp_luasnip',
