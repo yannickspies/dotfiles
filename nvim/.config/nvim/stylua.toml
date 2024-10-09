@@ -1,0 +1,5 @@
+column_width = 120
+indent_type = "Spaces"  # Use spaces for indentation
+indent_width = 2        # Ensure it matches your Neovim setup
+line_endings = "Unix"   # Optional: force Unix line endings
+quote_style = "AutoPreferDouble"  # Optional: adjust based on preference
