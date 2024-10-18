@@ -1,6 +1,23 @@
 return {
   "folke/trouble.nvim",
-  opts = {}, -- for default options, refer to the configuration section for custom setup.
+  opts = {
+    -- Add custom modes here
+    modes = {
+      preview_float = {
+        mode = "diagnostics",
+        preview = {
+          type = "float",
+          relative = "editor",
+          border = "rounded",
+          title = "Preview",
+          title_pos = "center",
+          position = { 0, -2 },
+          size = { width = 0.3, height = 0.3 },
+          zindex = 200,
+        },
+      },
+    },
+  },
   cmd = "Trouble",
   keys = {
     {
@@ -32,6 +49,13 @@ return {
       "<leader>xQ",
       "<cmd>Trouble qflist toggle<cr>",
       desc = "Quickfix List (Trouble)",
+    },
+    {
+      "<cr>",
+      function()
+        require("trouble").action("jump")
+      end,
+      desc = "Jump to Diagnostic (Trouble)",
     },
   },
 }
